@@ -1,0 +1,12 @@
+def findLetters(fileName):
+    """Searches through a mess of text in a specified file
+    and returns letters found as string"""
+    
+    fo = open(fileName)
+    n = []
+    for line in fo:
+        for char in line:
+            if char.isalpha():
+                n.append(char)
+    letters = ''.join(n)
+    return letters
