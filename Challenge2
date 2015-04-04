@@ -1,0 +1,17 @@
+def decode(shiftAmt, encodedString ):
+    
+    """Only works with lowercase letters, assumes shiftAmt is integer
+    and encodedString is string. Returns decoded string"""
+    from string import lowercase as frm
+    import string
+
+    new =[]
+    for i in range(len(frm)):
+        new.append( frm[(i+shiftAmt)%26] )
+    to = ''.join(new)
+    trans_table = string.maketrans(frm, to)
+    return encodedString.translate(trans_table)
+    
+phrase = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."
+
+decode(2, phrase)
